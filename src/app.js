@@ -1,7 +1,9 @@
+"use strict";
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-import Article from './src/schema';
+
 
 const app = express();
 
@@ -14,8 +16,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/read/:article', function(req, res) {
-    let result = Article.findOne({title: req.params.article});
-    res.send(result);
+    // Read article
 });
 
 app.post('/write/:article', function(req, res) {

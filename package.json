@@ -2,7 +2,7 @@
   "name": "sss-wiki",
   "version": "0.0.0",
   "description": "My personal project: Structed with the Seed Syntax Wiki Engine",
-  "main": "./app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
