@@ -1,0 +1,16 @@
+{
+  "name": "sss-wiki",
+  "version": "0.0.0",
+  "description": "My personal project: Structed with the Seed Syntax Wiki Engine",
+  "main": "./app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yeonji Gong",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^7.6.3"
+  }
+}
