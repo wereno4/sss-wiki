@@ -5,7 +5,7 @@ module.exports = async content => {
     let rawTableArray = [];
     let parsedTableArray = [];
     while (true) {
-        const firstPoint = parsingContent.search('||');
+        const firstPoint = parsingContent.search(/\|\|/g);
         const secondPoint = parsingContent.search(/\|\|\n[^|]/g);
         let rawTable = '';
         if (secondPoint === -1) {
@@ -15,6 +15,8 @@ module.exports = async content => {
                 parsingContent.substring(parsingContent.length - 3, parsingContent.length) === '||\n'
             )) {
                 rawTable = parsingContent.substring(firstPoint, parsingContent.length);
+            } else {
+                break;
             }
         } else {
             rawTable = parsingContent.substring(firstPoint, secondPoint + 3);
