@@ -38,7 +38,7 @@ const articleSchema = new mongoose.Schema({
         unique: true
     },
     content: {
-        type: String,
+        type: mongoose.Schema.Types.Mixed,
         required: true
     }
 });
