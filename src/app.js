@@ -15,15 +15,17 @@ app.get('/', function(req, res) {
     res.send('developing');
 });
 
-app.get('/read/:article', function(req, res) {
+app.get('/read/:article', async function(req, res) {
     // Read article
 });
 
-app.post('/write/:article', function(req, res) {
+app.post('/write/:article', async function(req, res) {
     // Write article
 });
 
 app.get('/tree/:article', function(req, res) {
     // Find tree of category
 });
-
+app.get('/raw/:article', async function(req, res) {
+    // Raw text of article
+})

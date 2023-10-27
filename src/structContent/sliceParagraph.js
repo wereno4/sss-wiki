@@ -20,7 +20,7 @@ function makeThemObject(temporaryString) {
       } else {
          level = 0;
       }
-      let title = regex.exec(temporaryString) ? temporaryString.match(regex)[0].replace(/(?:={1,6}#?) (.+?) (?:#?={1,6})\n/u, '$1') : null;
+      let title = regex.exec(temporaryString) ? temporaryString.match(regex)[0].replace(/(?:={1,6}#?) (.+?) (?:#?={1,6})\n/u, '$1') : "";
       let hidden = /(?:={1,6}#) (.+?) (?:#={1,6})\n/u.test(temporaryString) ? true : false;
       let content = temporaryString.replace(regex, '');
       return {
