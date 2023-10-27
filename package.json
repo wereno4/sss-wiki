@@ -1,7 +1,7 @@
 {
   "name": "sss-wiki",
   "version": "0.0.0",
-  "description": "My personal project: Structed with the Seed Syntax Wiki Engine",
+  "description": "My personal project: Structed data with Simple Syntax",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
