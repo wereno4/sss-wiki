@@ -6,8 +6,11 @@ const articleSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        unique: true,
         index: true
+    },
+    description: {
+        type: String,
+        required: true
     },
     alias: [{
         types: String,
