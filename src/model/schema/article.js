@@ -4,8 +4,12 @@ const mongoose = require('mongoose');
 
 const articleSchema = new mongoose.Schema({
     title: {
-        type: String,
+        type: {
+            name: String,
+            index: Number
+        },
         required: true,
+        unique: true,
         index: true
     },
     description: {
@@ -24,13 +28,18 @@ const articleSchema = new mongoose.Schema({
         type: Boolean,
         required: true
     },
-    categories: [mongoose.Schema.Types.ObjectId],
+    categories: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'Article'
+    },
     mainArticle: {
         type: mongoose.Schema.Types.ObjectId,
+        ref: 'Article',
         index: true
     },
     articleType: {
         type: mongoose.Schema.Types.ObjectId,
+        ref: 'dataType',
         required: true
     },
     information: {
@@ -43,6 +52,4 @@ const articleSchema = new mongoose.Schema({
     }
 });
 
-const Article = mongoose.model('Article', articleSchema);
-
-module.exports = Article;
+module.exports = articleSchema;
