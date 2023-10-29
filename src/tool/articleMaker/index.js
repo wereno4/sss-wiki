@@ -1,6 +1,6 @@
 const wikiParser = require("../wikiParser");
 
-async function articleMaker(articleObject) {
+const articleMaker = async articleObject => {
     const resultObject = articleObject;
     if (!Array.isArray(resultObject)) {
         let parsedContent = wikiParser(resultObject.content);
@@ -15,3 +15,5 @@ async function articleMaker(articleObject) {
     }
     return resultObject;
 }
+
+module.exports = articleMaker;
