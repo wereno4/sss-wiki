@@ -9,17 +9,13 @@ const articleSchema = new mongoose.Schema({
             index: Number
         },
         required: true,
-        unique: true,
-        index: true
+        unique: true
     },
     description: {
         type: String,
         required: true
     },
-    alias: [{
-        types: String,
-        index: true
-    }],
+    alias: [String],
     isCategory: {
         type: Boolean,
         required: true
@@ -34,16 +30,16 @@ const articleSchema = new mongoose.Schema({
     },
     mainArticle: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Article',
-        index: true
+        ref: 'Article'
     },
     articleType: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'dataType',
+        ref: 'DataType',
         required: true
     },
     information: {
         type: mongoose.Schema.Types.ObjectId,
+        ref: 'Data',
         unique: true
     },
     content: {
