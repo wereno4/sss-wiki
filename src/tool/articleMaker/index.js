@@ -3,14 +3,16 @@ const wikiParser = require("../wikiParser");
 const articleMaker = async articleObject => {
     const resultObject = articleObject;
     if (!Array.isArray(resultObject)) {
-        let parsedContent = wikiParser(resultObject.content);
-        resultObject.child = articleMaker(resultObject.child);
-        resultObject.content = await parsedContent;
+        resultObject.content = await wikiParser(resultObject.content);
+        if (resultObject.hasOwnProperty("child")) {
+            resultObject.child = await articleMaker(resultObject.child);
+        }
     } else {
         for (let paragraph of resultObject) {
-            let parsedContent = wikiParser(paragraph.content);
-            paragraph.child = articleMaker(resultObject.child);
-            resultObject.content = await parsedContent;
+            paragraph.content = await wikiParser(paragraph.content);
+            if (paragraph.hasOwnProperty("child")) {
+                paragraph.child = await articleMaker(paragraph.child);
+            }
         }
     }
     return resultObject;
